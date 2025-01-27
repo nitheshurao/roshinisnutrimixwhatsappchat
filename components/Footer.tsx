@@ -7,15 +7,13 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        py: 3,
-        px: 2,
-        mt: "auto",
+       
         // backgroundColor: (theme) =>
         //   theme.palette.mode === "light" ? theme.palette.grey[200] : theme.palette.grey[800],
       }}
     >
       <Container maxWidth="lg">
-        <Grid container spacing={4}>
+        {/* <Grid container spacing={4}>
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h6" gutterBottom>
               Company
@@ -84,11 +82,11 @@ export default function Footer() {
               Subscribe to our newsletter to get the latest updates.
             </Typography>
           </Grid>
-        </Grid>
-        <Box mt={5}>
+        </Grid> */}
+        <Box className='p-2'>
           <Typography variant="body2" color="textSecondary" align="center">
             {'© '}
-            {new Date().getFullYear()} Your Company Name. All rights reserved.
+            {new Date().getFullYear()}roshinis.com. All rights reserved.
           </Typography>
         </Box>
       </Container>
