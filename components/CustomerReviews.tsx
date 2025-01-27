@@ -35,18 +35,19 @@ export default function CustomerReviews() {
         {testimonials.length === 0 ? (
           <p className="text-gray-600">No customer reviews yet.</p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="relative overflow-x-auto">
+          <div className="flex space-x-6 p-6">
             {testimonials.map((review: any, index) => (
               <div
                 key={index}
-                className="relative bg-gradient-to-br from-[#e2cebc] to-white p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                className="relative bg-gradient-to-br from-[#e2cebc] to-white p-8 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-transform duration-500 flex-shrink-0 w-72"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-200 to-transparent opacity-10 rounded-xl blur-md"></div>
-
+        
                 <div className="absolute top-0 left-4 -translate-y-6 text-6xl text-yellow-500">
                   &ldquo;
                 </div>
-
+        
                 <div className="relative h-64 mx-auto mb-6 flex items-center justify-center">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-yellow-300 to-pink-200 blur-xl opacity-50"></div>
                   {review?.images?.[0] ? (
@@ -61,13 +62,7 @@ export default function CustomerReviews() {
                     </div>
                   )}
                 </div>
-
-                <div className="relative z-10 text-center">
-                  <p className="text-xl italic text-gray-700 mb-4">
-                    {review.feedback || "No feedback provided."}
-                  </p>
-                </div>
-
+        
                 <div className="relative z-10 text-center">
                   <p className="text-lg font-semibold text-yellow-700">
                     {review.name || "Anonymous"}
@@ -75,16 +70,18 @@ export default function CustomerReviews() {
                   <p className="text-sm text-gray-500">
                     {review.location || "Location not specified"}
                   </p>
-
+        
                   <p className="text-sm text-gray-500">
-                    {review.feedback || "Location not specified"}
+                    {review.feedback || "Feedback not provided"}
                   </p>
                 </div>
-
+        
                 <div className="absolute bottom-4 right-4 h-8 w-8 bg-yellow-500 rounded-full shadow-lg animate-pulse"></div>
               </div>
             ))}
           </div>
+        </div>
+        
         )}
       </div>
     </section>
