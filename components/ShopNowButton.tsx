@@ -452,7 +452,7 @@ const ShopNowButton = () => {
             {/* Address Form */}
             <div className="mb-6 grid grid-cols-1 gap-4">
               {[
-                { name: "name ", placeholder: "Name *" },
+                { name: "name", placeholder: "Name *" },
                 { name: "email", placeholder: "Email" },
                 { name: "street", placeholder: "Street *" },
                 { name: "city", placeholder: "City *" },
