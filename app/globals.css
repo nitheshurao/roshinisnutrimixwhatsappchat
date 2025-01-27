@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+/* app/globals.css */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  /* padding: 0 15px; */
+}
+/* src/styles/globals.css */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #fed7aa; /* Light Background */
+  color: #422006; /* Text Color */
+}
+
+h1, h2, h3 {
+  color: #422006; /* Headings Color */
+}
+
+a {
+  color: #947464; /* Primary Accent */
+}
+
+button {
+  background-color: #b3c8d3; /* Primary Accent */
+  color: white;
+}
+
+button:hover {
+  background-color: #7c2d12; /* Dark Accent */
+}
+
+input, textarea, select {
+  border: 2px solid #713f12; /* Secondary Dark Accent */
+  padding: 8px;
+  margin-top: 8px;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #6b21a8; /* Secondary Action Color */
+}
+
+/* Floating animation for the product image */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Falling Balls Animation */
+.falling-ball {
+  position: absolute;
+  top: -50px;
+  border-radius: 50% / 60%; 
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+/* General styling for feature cards */
+/* Pulse Animation for Background Elements */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 5s infinite;
+}
+
+/* Smooth transitions for hover effects */
+.transition-all {
+  transition: all 0.5s ease;
+}
