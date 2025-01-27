@@ -334,7 +334,7 @@ const ShopNowButton = () => {
 
   const handleSendWhatsApp = () => {
     const { name, email, street, city, state, postalCode, country, phone } = formData;
-    if (!name || !email || !street || !city || !state || !postalCode || !country || !phone) {
+    if (!name || !street || !city || !state || !postalCode || !country || !phone) {
       alert("Please fill in all the address details.");
       return;
     }
@@ -347,7 +347,13 @@ const ShopNowButton = () => {
           product.price * (selectedQuantities[product.id] || 1)
         }`
     );
-    const message = `Hello! I would like to place an order:\n\n${productDetails}\n\n*Total Price*: ₹${calculateTotal}\n\n*Delivery Address*:\nName: ${
+    const totalPrices= selectedProducts.reduce((total: number, product: { id: string | number; price: number; name: any; }) => {
+      const quantity = selectedQuantities[product.id] || 0; // Use 0 if quantity is undefined
+      const productTotal = product.price * quantity;
+  
+      return total + productTotal;
+    }, 0);
+    const message = `Hello! I would like to place an order:\n\n${productDetails}\n\n*Total Price*: ₹${totalPrices}\n\n*Delivery Address*:\nName: ${
       formData.name
     }\nEmail: ${formData.email}\nPhone: ${formData.phone}\nStreet: ${
       formData.street
