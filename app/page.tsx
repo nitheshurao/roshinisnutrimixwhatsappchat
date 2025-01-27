@@ -7,6 +7,7 @@ import Hero from "@/components/Hero";
 import PreparationSection from "@/components/PreparationSection";
 import ProdDetailsList from "@/components/ProdDetailsList";
 import ProductFeatures from "@/components/ProductFeatures";
+import ShopNowButton from "@/components/ShopNowButton";
 
 export default function Home() {
   return (
@@ -16,9 +17,11 @@ export default function Home() {
       <PreparationSection />
       <CustomerReviews />
       <Benefits />
-      <CTASection />
+    
       <ProdDetailsList />
       <FAQSection />
+    
+     <CTASection />
     </>
   );
 }

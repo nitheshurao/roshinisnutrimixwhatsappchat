@@ -263,7 +263,7 @@
 
 // export default ShopNowButton;
 
-
+"use client"
 import React, { useState } from "react";
 
 const ShopNowButton = () => {
