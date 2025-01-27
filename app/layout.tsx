@@ -34,7 +34,7 @@ export default function RootLayout({
 {/* <Header/> */}
   {/* <Navbar/> */}
 <Flotingbtn/>
-{/* <ShopFlotingbtn/> */}
+<ShopFlotingbtn/>
         {children}
       
  

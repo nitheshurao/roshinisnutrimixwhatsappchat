@@ -392,7 +392,7 @@ const ShopNowButton = () => {
           <div className=" relative overflow-auto h-96  bg-white w-full max-w-lg p-8 rounded-3xl shadow-lg relative">
             <button
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-xl"
+              className="absolute top-4 rounded-xl right-4 p-2 bg-red-500 hover:bg-red-900 text-xl"
             >
               ✕
             </button>
@@ -452,12 +452,12 @@ const ShopNowButton = () => {
             {/* Address Form */}
             <div className="mb-6 grid grid-cols-1 gap-4">
               {[
-                { name: "name", placeholder: "Name" },
+                { name: "name ", placeholder: "Name *" },
                 { name: "email", placeholder: "Email" },
-                { name: "street", placeholder: "Street" },
-                { name: "city", placeholder: "City" },
+                { name: "street", placeholder: "Street *" },
+                { name: "city", placeholder: "City *" },
                 { name: "state", placeholder: "State" },
-                { name: "postalCode", placeholder: "Postal Code" },
+                { name: "postalCode", placeholder: "Postal Code *" },
                 { name: "country", placeholder: "Country" },
                 { name: "phone", placeholder: "Phone" },
               ].map(({ name, placeholder }) => (
@@ -468,7 +468,7 @@ const ShopNowButton = () => {
                   placeholder={placeholder}
                   value={formData[name]}
                   onChange={handleChange}
-                  className="p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-green-400 focus:border-green-400"
+                  className="p-3 border border-gray-300  rounded-lg shadow-sm focus:ring-green-400 focus:border-green-400"
                 />
               ))}
             </div>
@@ -478,6 +478,12 @@ const ShopNowButton = () => {
               className="w-full py-3 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition-transform transform hover:scale-105"
             >
               Send Order via WhatsApp
+            </button>
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="w-full py-3 mt-1 bg-red-600 text-white font-semibold rounded-lg shadow-md hover:bg-red-900 transition-transform transform hover:scale-105"
+              >
+              Close
             </button>
           </div>
         </div>
