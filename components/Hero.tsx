@@ -27,17 +27,18 @@ export default function NutrimixChefAdventure() {
 
       return (
         <div
-          key={i}
-          className="absolute flex items-center justify-center"
-          style={{
-            ...position,
-            ...size,
-            animation: `float ${duration} ease-in-out infinite`,
-            animationDelay: `${Math.random() * 3}s`,
-          }}
-        >
-          {dryFruits[Math.floor(Math.random() * dryFruits.length)]}
-        </div>
+        key={i}
+        className="absolute flex items-center justify-center opacity-60 text-gray-500"
+        style={{
+          ...position,
+          ...size,
+          animation: `float ${duration} ease-in-out infinite`,
+          animationDelay: `${Math.random() * 3}s`,
+        }}
+      >
+        {dryFruits[Math.floor(Math.random() * dryFruits.length)]}
+      </div>
+      
       );
     });
     setDryFruitElements(elements);
@@ -47,18 +48,20 @@ export default function NutrimixChefAdventure() {
     <section className="relative h-screen overflow-hidden bg-gradient-to-br from-white to-gray-100 flex items-center justify-center">
       {/* Floating Dry Fruits */}
       {dryFruitElements}
-
-      <div className="relative z-40 text-center flex flex-col items-center">
+   
+   
+      <div className="relative z-40 text-center flex flex-col items-center  opacity-1">
         {/* Heading */}
-        <h1 className="text-5xl font-bold text-gray-800 mb-4 transition-opacity duration-1000 ease-in-out opacity-100">
-          Fuel Your Health Naturally
-        </h1>
+        <h1 className="text-6xl font-bold text-transparent    bg-clip-text bg-gradient-to-r from-[#e8b653] via-orange-400 to-red-500 mb-4 transition-opacity duration-1000 ease-in-out opacity-100">
+      Fuel Your Health, Naturally
+    </h1>
 
-        {/* Subheading */}
-        <p className="text-lg text-gray-600 mb-8 transition-opacity duration-1000 delay-200 ease-in-out opacity-100">
-          Discover Nutrimix, the perfect blend of nutrition and taste.
-        </p>
-
+    <p className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-gray-700 via-gray-600 to-gray-800 mb-6 transition-opacity duration-1000 delay-200 ease-in-out opacity-100">
+      Discover the wholesome goodness of{" "}
+      <span className="font-semibold bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 via-orange-400 to-red-500">
+        Roshini's Nutrimix
+      </span>, your perfect blend of nutrition and taste.
+    </p>
         {/* Call to Action */}
         {/* <a
           href="shop"
