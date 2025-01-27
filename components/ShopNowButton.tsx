@@ -283,14 +283,14 @@ const ShopNowButton = () => {
 
   const products = [
     { id: 1, name: "Nutrimix - 1kg", price: 500 },
-    { id: 2, name: "Nutrimix - 500g", price: 300 },
+    { id: 2, name: "Nutrimix - 200g", price: 300 },
   ];
 
   const handleProductChange = (e: React.ChangeEvent<HTMLInputElement>, product: { id: any; name?: string; price?: number; }) => {
     const { checked, value } = e.target;
     if (checked) {
       setSelectedProducts([...selectedProducts, product]);
-      setSelectedQuantities((prev:any) => ({ ...prev, [product.id]: 1 }));
+      setSelectedQuantities((prev:any) => ({ ...prev, [product.id]: '' }));
     } else {
       setSelectedProducts(selectedProducts.filter((item:any) => item.id !== product.id));
       const updatedQuantities = { ...selectedQuantities };
@@ -339,7 +339,7 @@ const ShopNowButton = () => {
       return;
     }
 
-    const phoneNumber = "+917676885491"; // Replace with your WhatsApp number
+    const phoneNumber = "+917899589718"; // Replace with your WhatsApp number
     const productDetails = selectedProducts
     .map(
       (product: { name: any; price: number; id: string | number; }) =>
@@ -420,7 +420,7 @@ const ShopNowButton = () => {
                         <label className="text-sm text-gray-700">Qty:</label>
                         <input
                           type="number"
-                          value={selectedQuantities[product.id] || 1}
+                          value={selectedQuantities[product.id] || ''}
                           onChange={(e) => handleQuantityChange(e, product)}
                           className="w-16 p-2 border border-gray-300 rounded-lg focus:ring-green-400"
                           min="1"
